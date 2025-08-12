@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>promthex — profile</title>
+  <style>
+    :root {
+      --accent: #ff3b3b;
+      --bg-image: url('scarface-bg.jpg');
+      --avatar-image: url('avatar.jpg');
+      --font-stack: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-stack);
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .bg {
+      position: fixed;
+      inset: 0;
+      background-image: var(--bg-image);
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.25) contrast(1.1);
+      z-index: 0;
+    }
+    .bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+    }
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1000px;
+      padding: 20px;
+    }
+    .card {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 20px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      padding: 20px;
+    }
+    .left { text-align: center; }
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 0 auto;
+      background-image: var(--avatar-image);
+      background-size: cover;
+      background-position: center;
+      border: 4px solid var(--accent);
+    }
+    .name { font-size: 28px; font-weight: bold; margin-top: 15px; }
+    .status { font-size: 14px; color: #ccc; margin-top: 5px; }
+    .info { margin-top: 10px; font-size: 14px; color: #aaa; }
+    .badges {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .badge {
+      background: rgba(255,255,255,0.1);
+      padding: 5px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+    }
+    .right { display: flex; flex-direction: column; gap: 15px; }
+    .music {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: rgba(255,255,255,0.05);
+      padding: 10px;
+      border-radius: 10px;
+    }
+    .cover {
+      width: 60px;
+      height: 60px;
+      background: #333;
+      border-radius: 8px;
+    }
+    .song-info { flex: 1; }
+    .song-title { font-weight: bold; }
+    .song-artist { font-size: 13px; color: #aaa; }
+    .play-btn {
+      background: var(--accent);
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #000;
+    }
+    @media (max-width: 800px) { .card { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="wrap">
+    <div class="card">
+      <div class="left">
+        <div class="avatar"></div>
+        <div class="name">promthex</div>
+        <div class="status">never look back</div>
+        <div class="info">18 лет • Рига</div>
+        <div class="badges">
+          <div class="badge">Fame</div>
+          <div class="badge">Verified</div>
+          <div class="badge">Rich 💸</div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="music">
+          <div class="cover"></div>
+          <div class="song-info">
+            <div class="song-title">Rocket</div>
+            <div class="song-artist">A a A</div>
+          </div>
+          <button class="play-btn">PLAY</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
